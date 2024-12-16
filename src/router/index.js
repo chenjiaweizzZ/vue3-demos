@@ -17,6 +17,10 @@ const routes = [
         path: "/horse",
         component: () => import("@/views/horse.vue"),
     },
+    {
+        path: "/beforeConfirm",
+        component: () => import("@/views/beforeConfirm.vue"),
+    },
 ];
 
 export const router = createRouter({
