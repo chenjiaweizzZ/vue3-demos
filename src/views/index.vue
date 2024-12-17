@@ -10,3 +10,9 @@
 import { useIndexRoute } from "@/hooks/useIndexRoute";
 const { list, toPath } = useIndexRoute();
 </script>
+
+<style lang="scss" scoped>
+.index {
+  line-height: 50px;
+}
+</style>

@@ -1,29 +1,24 @@
 <template>
   <div>
-    <el-button @click="showMessageBox">Show Message Box</el-button>
+    <el-button @click="beforeDelete">Show Message Box</el-button>
   </div>
 </template>
 
-<script>
-import { useBeforeConfirm } from "@/hooks/useBeforeConfirm"; // 请替换为实际的路径
+<script lang="ts" setup>
+import { useBeforeConfirm } from "@/hooks/useBeforeConfirm";
+import imgSrc from "@/assets/images/AIRobot.png";
+const { myMessageBox } = useBeforeConfirm();
 
-export default {
-  setup() {
-    const { myMessageBox } = useBeforeConfirm();
-    const showMessageBox = () => {
-      myMessageBox({
-        // title: "提示",
-        message: "您确定要继续吗？",
-        type: "warning",
-        confirmButtonText: "确定",
-        onConfirm: () => {
-          console.log("用户点击了确定");
-        },
-      });
-    };
-    return {
-      showMessageBox,
-    };
-  },
+const beforeDelete = async (id: number) => {
+  myMessageBox({
+    title: "确定删除对话？",
+    imgSrc: imgSrc,
+    message: "删除后，聊天记录将不可恢复",
+    confirmButtonText: "确定",
+    showCancelButton: true,
+    onConfirm: () => {
+      console.log(123);
+    },
+  });
 };
 </script>
