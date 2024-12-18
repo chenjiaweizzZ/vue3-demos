@@ -21,6 +21,10 @@ const routes = [
         path: "/beforeConfirm",
         component: () => import("@/views/beforeConfirm.vue"),
     },
+    {
+        path: "/three",
+        component: () => import("@/views/three.vue"),
+    },
 ];
 
 export const router = createRouter({
