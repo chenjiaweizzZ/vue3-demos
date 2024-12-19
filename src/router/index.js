@@ -25,6 +25,10 @@ const routes = [
         path: "/three",
         component: () => import("@/views/three.vue"),
     },
+    {
+        path: "/helloThree",
+        component: () => import("@/views/hello-three.vue"),
+    }
 ];
 
 export const router = createRouter({
